@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Builder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header>
+        <p class="eyebrow">PACKAGE SETUP</p>
+        <h1>Hotel Builder</h1>
+        <p class="intro">Add the hotel options included in this package.</p>
+      </header>
+
+      <section id="hotel-list" aria-label="Hotel options"></section>
+
+      <button id="add-hotel" class="add-hotel" type="button">+ Add Hotel</button>
+
+      <section class="builder-section" aria-labelledby="transport-builder-title">
+        <header>
+          <p class="eyebrow">PACKAGE SETUP</p>
+          <h1 id="transport-builder-title">Transport Builder</h1>
+          <p class="intro">Add the transport options included in this package.</p>
+        </header>
+        <div id="transport-list" aria-label="Transport options"></div>
+        <button id="add-transport" class="add-hotel" type="button">+ Add Transport</button>
+      </section>
+    </main>
+
+    <template id="hotel-template">
+      <article class="hotel-card">
+        <h2>Hotel Option</h2>
+        <div class="form-grid">
+          <label>City<input name="city" value="Munnar" placeholder="Enter city" /></label>
+          <label>Hotel Category
+            <select name="category">
+              <option>3 Star</option><option>4 Star</option><option>5 Star</option>
+            </select>
+          </label>
+          <label>Hotel Name<input name="hotelName" value="Hotel ABC" placeholder="Enter hotel name" /></label>
+          <label>Room Type<input name="roomType" value="Deluxe" placeholder="Enter room type" /></label>
+          <label>Nights<input name="nights" type="number" min="1" value="2" /></label>
+          <label>Price / Night<input name="price" inputmode="numeric" value="₹ 3500" placeholder="₹ 0" /></label>
+          <label>Meal Plan
+            <select name="mealPlan"><option>CP</option><option>MAP</option><option>AP</option><option>EP</option></select>
+          </label>
+          <label>Image URL<input name="imageUrl" type="url" placeholder="Optional" /></label>
+          <label class="full-width">Description<textarea name="description" placeholder="Describe this hotel option"></textarea></label>
+        </div>
+        <div class="card-actions"><button class="delete-hotel" type="button">Delete Hotel</button></div>
+      </article>
+    </template>
+
+    <template id="transport-template">
+      <article class="hotel-card">
+        <h2>Transport Option</h2>
+        <div class="form-grid">
+          <label>Transport Type
+            <select name="transportType"><option>Private Cab</option><option>Shared Cab</option><option>Bus</option><option>Train</option><option>Flight</option></select>
+          </label>
+          <label>Vehicle Type<input name="vehicleType" value="Sedan" placeholder="e.g. Sedan, Tempo Traveller" /></label>
+          <label>Pickup Location<input name="pickup" placeholder="Enter pickup location" /></label>
+          <label>Drop Location<input name="drop" placeholder="Enter drop location" /></label>
+          <label>Price<input name="transportPrice" inputmode="numeric" value="₹ 0" placeholder="₹ 0" /></label>
+          <label>Capacity<input name="capacity" type="number" min="1" value="2" /></label>
+          <label class="full-width">Notes<textarea name="transportNotes" placeholder="Optional transport details"></textarea></label>
+        </div>
+        <div class="card-actions"><button class="delete-transport" type="button">Delete Transport</button></div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>

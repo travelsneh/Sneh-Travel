@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customize This Package</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell customer-page">
+      <header>
+        <p class="eyebrow">YOUR KERALA ESCAPE</p>
+        <h1>Customize This Package</h1>
+        <p class="intro">Choose your stay, travel, meals, and travellers. Your package total updates instantly.</p>
+      </header>
+
+      <div class="customize-layout">
+        <form id="customize-form" class="choices" onsubmit="return false">
+          <section class="choice-card">
+            <h2>Hotel</h2>
+            <div class="choice-grid">
+              <label>Munnar hotel (2 nights)
+                <select id="munnar-hotel" data-hotel="munnar"></select>
+              </label>
+              <label>Thekkady hotel (2 nights)
+                <select id="thekkady-hotel" data-hotel="thekkady"></select>
+              </label>
+              <label>Alleppey hotel (2 nights)
+                <select id="alleppey-hotel" data-hotel="alleppey"></select>
+              </label>
+            </div>
+          </section>
+
+          <section class="choice-card">
+            <h2>Transport</h2>
+            <label>Vehicle
+              <select id="transport"><option value="sedan">Sedan</option><option value="suv">SUV</option><option value="innova">Innova</option><option value="tempo">Tempo Traveller</option></select>
+            </label>
+          </section>
+
+          <section class="choice-card">
+            <h2>Meal</h2>
+            <label>Meal plan
+              <select id="meal"><option value="ep">EP — Room only</option><option value="cp">CP — Breakfast</option><option value="map">MAP — Breakfast & dinner</option><option value="ap">AP — All meals</option></select>
+            </label>
+          </section>
+
+          <section class="choice-card">
+            <h2>Travellers</h2>
+            <div class="choice-grid">
+              <label>Adults<input id="adults" type="number" min="1" value="2" /></label>
+              <label>Children<input id="children" type="number" min="0" value="0" /></label>
+              <label>Rooms<input id="rooms" type="number" min="1" value="1" /></label>
+              <label>Travel date<input id="travel-date" type="date" /></label>
+            </div>
+          </section>
+        </form>
+
+        <aside class="price-summary" aria-live="polite">
+          <p class="eyebrow">ESTIMATED TOTAL</p>
+          <p class="price" id="total-price">₹0</p>
+          <p class="price-note">Includes the selected 6-night package.</p>
+          <dl id="price-breakdown" class="price-breakdown"></dl>
+          <button type="button" class="book-button">Continue to booking</button>
+        </aside>
+      </div>
+    </main>
+    <script src="customize.js"></script>
+  </body>
+</html>
